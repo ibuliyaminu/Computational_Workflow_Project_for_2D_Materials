@@ -12,7 +12,7 @@ def download_CIF_material(RCSR_url, filename): #function to download the CIF fil
 
 # Step 2: Convert CIF to d12 Input format
 def convert_CIF_to_d12(CIF_material): #function to convert CIF material to d12 format
-    inputfile_d12 = convert_to_D12_format(CIF_material)  # I will later set a convert_to_D12_format function
+    inputfile_d12 = convert_to_d12_format(CIF_material)  # I will later set a convert_to_d12_format function
     return inputfile_d12
 
 # Step 3: Perform DFT Calculations on HPCC
