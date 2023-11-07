@@ -1,11 +1,18 @@
- #The CIF file can be downloaded from any material database such as RCSR, C2DB, or materials project.
+#The CIF file can be downloaded from any material database such as RCSR, C2DB, or materials project.
 #RCSR = Reticular Chemistry Structure Resource (https://rcsr.anu.edu.au/)
 #C2DB = Computational 2D Materials Database (https://cmr.fysik.dtu.dk/c2db/c2db.html)
 
+###########I am using RCSR database in this project##############
+
 # Step 1: Download CIF Material.
-#I am using RCSR database in this project
 def download_CIF_material(RCSR_url, filename): #function to download the CIF file from the specified RCSR_url
 #and save it to the specified filename
-    CIF_material = download(RCSR_url) #I would set up a download function here later
+    CIF_material = download(RCSR_url) #I will set up a download function here later
     return CIF_material
-    
+
+# Step 2: Convert CIF to d12 Input format
+def convert_CIF_to_d12(CIF_material): #function to convert CIF material to d12 format
+    inputfile_d12 = convert_to_D12_format(CIF_material)  # I will later set a convert_to_D12_format function
+    return inputfile_d12
+
+# Step 3: Perform DFT Calculations on HPCC
