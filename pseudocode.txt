@@ -19,3 +19,20 @@ def convert_CIF_to_d12(CIF_material): #function to convert CIF material to d12 f
 def submitcrystal17_DFT_calculations(inputfile_d12): #Implementation for performing DFT calculations for the given input
     DFT_outputs = submitcrystal17_on_HPCC(inputfile_d12)  #implementing the DFT calculation function
     return DFT_outputs
+
+# Step 4: Separate Errored ones from Optimized ones
+def updatelist_errored_and_optimized(DFT_outputs): # Implementation to separate errored results from optimized results
+    # Initialize lists to store errored and optimized outputs/results
+    errored_outputs = []
+    optimized_outputs = []
+# Define a function to check if a result is errored or uptimized
+def is_errored(output):
+
+    # Loop through DFT outputs and separate them based on a condition
+    for output in DFT_outputs:
+        if is_errored(output):
+            errored_outputs.append(output)
+        else:
+            optimized_outputs.append(output)
+
+    return errored_outputs, optimized_outputs
