@@ -41,3 +41,8 @@ def is_errored(output):
 def CRYSTAL_to_CIF_conversion(optimized_outputs): # Conversion function of optimized results to CIF format
     CIF_optimized = CRYSTAL_to_CIF(optimized_outputs)  # Implementation of the CIF conversion
     return CIF_optimized
+
+# Step 6: Visualization using Relevant Software (e.g., Vesta)
+def visualize_optimized_structure(CIF_optimized):
+    # Implementation for visualizing the optimized structure using software like Vesta
+    visualize_structure(CIF_optimized)  # Implementing the visualization function
