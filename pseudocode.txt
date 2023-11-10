@@ -43,3 +43,6 @@ def CRYSTAL_to_CIF_conversion(optimized_outputs): # Conversion function of optim
     return CIF_optimized
 
 # Step 6: Visualization using Relevant Software (e.g., Vesta)
+def visualize_optimized_structure(CIF_optimized):
+    # Implementation for visualizing the optimized structure using software like Vesta
+    visualize_structure(CIF_optimized)  # You would need to implement the visualization function
