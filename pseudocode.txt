@@ -51,3 +51,8 @@ def visualize_optimized_structure(CIF_optimized):
 def save_optimized_structures(CIF_optimized):
     # Implementation to save the optimized structures to a storage location
     save_structures(optimized_structure)  # Implementing the saving function
+
+##################### NOTE #########################
+# As you suggested in your feedback on my DFD "you may want to focus on either the optimized structure result"
+# Therefore, I am thinking about considering the optimized stages as the 1st stage, if it works,
+# Then, I will move to the properties calculations.
