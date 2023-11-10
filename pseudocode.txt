@@ -37,3 +37,7 @@ def is_errored(output):
 
     return errored_outputs, optimized_outputs
 
+# Step 5: Convert Optimized Outputs to CIF (only for structural vizualization)
+def CRYSTAL_to_CIF_conversion(optimized_outputs): # Conversion function of optimized results to CIF format
+    CIF_optimized = CRYSTAL_to_CIF(optimized_outputs)  # Implementation of the CIF conversion
+    return CIF_optimized
