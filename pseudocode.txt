@@ -10,3 +10,8 @@ def download_CIF_material(RCSR_url, filename): #function to download the CIF fil
     CIF_material = download(RCSR_url) #I will set up a download function here later
     return CIF_material
 
+# Step 2: Convert CIF to d12 Input format
+def convert_CIF_to_d12(CIF_material): #function to convert CIF material to d12 format
+    inputfile_d12 = convert_to_d12_format(CIF_material)  # I will later set a convert_to_d12_format function
+    return inputfile_d12
+
