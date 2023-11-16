@@ -15,8 +15,8 @@ def convert_CIF_to_d12(CIF_material): #function to convert CIF material to d12 f
     inputfile_d12 = convert_to_d12_format(CIF_material)  # I will later set a convert_to_d12_format function
     return inputfile_d12
 
-# Step 3: Perform DFT Calculations (optimization) using CRYSTAL17 software on HPCC
-def submitcrystal17_DFT_calculations(inputfile_d12): #Implementation for performing DFT calculations for the given input
+# Step 3: Perform Density Functional Theory (DFT) Calculations (optimization) using CRYSTAL17 software on HPCC
+def submitcrystal17_calculations(inputfile_d12): #Implementation for performing DFT calculations for the given input
     DFT_outputs = submitcrystal17_on_HPCC(inputfile_d12)  #implementing the DFT calculation function
     return DFT_outputs
 
