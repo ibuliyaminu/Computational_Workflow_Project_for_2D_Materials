@@ -1,8 +1,9 @@
 # Rule 1: Converting CIF file to d12 file as needed for the Density Function Theory Calculation using CRYSTAL17 software 
 rule create_BULK_d12_from_cif:
     input:
-        "data/WTe2_1Tprime_FULLOPT.cif"
+        "data/WTe2.cif"
     output:
-        "result1/WTe2_1Tprime_FULLOPT_BULK_OPTGEOM_TZ.d12"
+        "result1/WTe2_BULK_OPTGEOM_TZ.d12"
     shell:
         "python scripts/create_BULK_d12_from_cif.py {input} > {output}"
+
