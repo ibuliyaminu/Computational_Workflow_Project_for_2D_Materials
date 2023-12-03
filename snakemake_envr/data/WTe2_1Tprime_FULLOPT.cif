@@ -1,0 +1,33 @@
+data_WTe2_1Tprime_FULLOPT.out
+
+_cell_length_a                         6.146004
+_cell_length_b                         3.410660
+_cell_length_c                         13.082592
+_cell_angle_alpha                      90.000000
+_cell_angle_beta                       94.777699
+_cell_angle_gamma                      90.000000
+_symmetry_space_group_name_H-M         'P 1'
+_symmetry_Int_Tables_number            1
+
+loop_
+_symmetry_equiv_pos_as_xyz
+   'x, y, z'
+
+loop_
+   _atom_site_label
+   _atom_site_type_symbol
+   _atom_site_fract_x
+   _atom_site_fract_y
+   _atom_site_fract_z
+Te001  Te  -0.405641   0.250000   0.108569
+Te002  Te   0.405641  -0.250000  -0.108569
+Te003  Te   0.101163  -0.250000   0.157049
+Te004  Te  -0.101163   0.250000  -0.157049
+Te005  Te  -0.445504  -0.250000   0.343458
+Te006  Te   0.445504   0.250000  -0.343458
+Te007  Te   0.052475   0.250000   0.391090
+Te008  Te  -0.052475  -0.250000  -0.391090
+ W009   W   0.181983   0.250000   0.008649
+ W010   W  -0.181983  -0.250000  -0.008649
+ W011   W   0.321012  -0.250000  -0.493050
+ W012   W  -0.321012   0.250000   0.493050
