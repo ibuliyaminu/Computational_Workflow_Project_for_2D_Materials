@@ -7,3 +7,12 @@ rule create_BULK_d12_from_cif:
     shell:
         "python scripts/create_BULK_d12_from_cif.py {input} > {output}"
 
+# Rule 2: Submit the d12 file to the HPCC using CRYSTAL17 for the calculation
+rule submitcrystal17:
+    input:
+        "result1/WTe2_BULK_OPTGEOM_TZ.d12"
+    output:
+        "result1/WTe2_BULK_OPTGEOM_TZ.d12"
+    shell:
+        "python scripts/create_BULK_d12_from_cif.py {input} > {output}"
+
