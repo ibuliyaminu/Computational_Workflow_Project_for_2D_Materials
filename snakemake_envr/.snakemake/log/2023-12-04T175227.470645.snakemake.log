@@ -1,0 +1,3 @@
+TypeError in file /mnt/ufs18/home-216/buliyami/Computational_Workflow_Project_for_2D_Materials/snakemake_envr/Snakefile, line 8:
+unsupported operand type(s) for /: 'str' and 'str'
+  File "/mnt/ufs18/home-216/buliyami/Computational_Workflow_Project_for_2D_Materials/snakemake_envr/Snakefile", line 8, in <module>

@@ -1,18 +1,10 @@
 # Rule 1: Converting CIF file to d12 file as needed for the Density Function Theory Calculation using CRYSTAL17 software 
 rule create_BULK_d12_from_cif:
     input:
-        "data/WTe2.cif"
+        data_in1="data1/WTe2.cif"
     output:
-        "result1/WTe2_BULK_OPTGEOM_TZ.d12"
+        data_out1="result1/WTe2_BULK_OPTGEOM_TZ.d12"
     shell:
-        "python scripts/create_BULK_d12_from_cif.py {input} > {output}"
-
-# Rule 2: Submit the d12 file to the HPCC using CRYSTAL17 for the calculation
-rule submitcrystal17:
-    input:
-        "result1/WTe2_BULK_OPTGEOM_TZ.d12"
-    output:
-        "result1/WTe2_BULK_OPTGEOM_TZ.d12"
-    shell:
-        "python scripts/create_BULK_d12_from_cif.py {input} > {output}"
-
+        "python scripts/create_BULK_d12_from_cif.py {input.data_in1} > {output.data_out1}" "&&"
+        "cp {output.data_out1} data2/" "&&"
+        "cp scripts/submitcrystal17.sh data2/"

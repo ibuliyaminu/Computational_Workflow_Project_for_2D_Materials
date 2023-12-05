@@ -188,7 +188,7 @@ def CIF2D12(material, struc, path, opt, basisset, OUTPUT_DIR):
 
 
 # Set the directory for CIF and d12 files
-DIR = "/mnt/home/buliyami/Computational_Workflow_Project_for_2D_Materials/snakemake_envr/data/"  # Change This Directory to CIF Directory
+DIR = "/mnt/home/buliyami/Computational_Workflow_Project_for_2D_Materials/snakemake_envr/data1/"  # Change This Directory to CIF Directory
 OUTPUT_DIR = "/mnt/home/buliyami/Computational_Workflow_Project_for_2D_Materials/snakemake_envr/result1/" # Change This Directory to d12 Directory
 
 pathlist = glob.glob(DIR + "*.cif")
