@@ -1,0 +1,24 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                         count
+------------------------  -------
+create_BULK_d12_from_cif        1
+total                           1
+
+Select jobs to execute...
+
+[Mon Dec  4 22:41:31 2023]
+rule create_BULK_d12_from_cif:
+    input: data1/WTe2.cif
+    output: result1/WTe2_BULK_OPTGEOM_TZ.d12
+    jobid: 0
+    reason: Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Mon Dec  4 22:41:35 2023]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2023-12-04T224130.637356.snakemake.log

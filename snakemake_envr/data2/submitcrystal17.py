@@ -12,7 +12,7 @@ import itertools
 def main():
     """Main function to execute Crystal17 jobs for D12 files."""
     # Set the data_folder to the working directory
-    data_folder = "/mnt/home/buliyami/Computational_Workflow_Project_for_2D_Materials/snakemake_envr/data2/" # Change This Directory to d12 Directory
+    data_folder = os.getcwd() # Change This Directory to d12 Directory
 
     data_files = os.listdir(data_folder)
 

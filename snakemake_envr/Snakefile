@@ -7,4 +7,16 @@ rule create_BULK_d12_from_cif:
     shell:
         "python scripts/create_BULK_d12_from_cif.py {input.data_in1} > {output.data_out1}" "&&"
         "cp {output.data_out1} data2/" "&&"
-        "cp scripts/submitcrystal17.sh data2/"
+        "cp scripts/submitcrystal17.sh data2/" "&&"
+        "cp scripts/submitcrystal17.py data2/"
+
+
+# Rule 2: Submit inputfile.d12 to CRYSTAL17 software via HPCC
+rule run_crystal17:
+    input:
+        data_in1="data2/submitcrystal17.sh",
+        data_in2="data2/WTe2_BULK_OPTGEOM_TZ.d12"
+    output:
+        data_out1="data2/WTe2_BULK_OPTGEOM_TZ.out"
+    shell:
+        "python data2/submitcrystal17.py {input.data_in1} {input.data_in2} {output.data_out1}"

@@ -1,0 +1,6 @@
+Building DAG of jobs...
+Launch sidecar process and read first output line.
+Done reading first output line.
+Nothing to be done (all requested files are present and up to date).
+Cluster sidecar process has terminated (retcode=1).
+Complete log: .snakemake/log/2023-12-04T220454.576387.snakemake.log
