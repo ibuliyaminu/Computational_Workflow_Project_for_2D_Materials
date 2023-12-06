@@ -17,6 +17,15 @@ rule run_crystal17:
         data_in1="data2/submitcrystal17.sh",
         data_in2="data2/WTe2_BULK_OPTGEOM_TZ.d12"
     output:
-        data_out1="data2/WTe2_BULK_OPTGEOM_TZ.out"
+        data_out1="data3/WTe2_BULK_OPTGEOM_TZ.out"
     shell:
         "python data2/submitcrystal17.py {input.data_in1} {input.data_in2} {output.data_out1}"
+
+# Rule 3: Confirm errors in the output files from the hpcc
+rule check_errored_output:
+    input:
+        "data2/WTe2_BULK_OPTGEOM_TZ.out"
+    output:
+        "results/errorlist.csv"
+    shell:
+        "python scripts/updatelists.py {input} > {output}"
