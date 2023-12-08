@@ -1,0 +1,33 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+all                          1
+convert_output_to_cif        1
+total                        2
+
+Select jobs to execute...
+
+[Fri Dec  8 16:36:28 2023]
+rule convert_output_to_cif:
+    input: data2/WTe2_BULK_OPTGEOM_TZ.out
+    output: data3/WTe2_BULK_OPTGEOM_TZ.cif
+    jobid: 3
+    reason: Missing output files: data3/WTe2_BULK_OPTGEOM_TZ.cif
+    resources: tmpdir=/tmp
+
+[Fri Dec  8 16:36:28 2023]
+Error in rule convert_output_to_cif:
+    jobid: 3
+    input: data2/WTe2_BULK_OPTGEOM_TZ.out
+    output: data3/WTe2_BULK_OPTGEOM_TZ.cif
+    shell:
+        CRYSTAL2cif data2/WTe2_BULK_OPTGEOM_TZ.out data3/WTe2_BULK_OPTGEOM_TZ.cif
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-12-08T163628.641238.snakemake.log

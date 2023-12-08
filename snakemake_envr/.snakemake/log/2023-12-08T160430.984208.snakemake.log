@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /mnt/ufs18/home-216/buliyami/Computational_Workflow_Project_for_2D_Materials/snakemake_envr/Snakefile, line 1:
+Missing input files for rule all:
+    affected files:
+        result1/WTe2_BULK_OPTGEOM_TZ.d12result2/completelist.csvresult2/errorlist.csvdata3/WTe2_BULK_OPTGEOM_TZ.cif
