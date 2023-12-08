@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule run_crystal17 in file /mnt/ufs18/home-216/buliyami/Computational_Workflow_Project_for_2D_Materials/snakemake_envr/Snakefile, line 22:
+Missing input files for rule run_crystal17:
+    output: data2/WTe2_BULK_OPTGEOM_TZ.out
+    affected files:
+        data2/WTe2_BULK_OPTGEOM_TZ.d12
+        data2/submitcrystal17.sh

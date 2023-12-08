@@ -1,0 +1,2 @@
+SyntaxError in file /mnt/ufs18/home-216/buliyami/Computational_Workflow_Project_for_2D_Materials/snakemake_envr/Snakefile, line 36:
+No rule keywords allowed after run/shell/script/notebook/wrapper/template_engine/cwl in rule check_errored_output. (Snakefile, line 36)
