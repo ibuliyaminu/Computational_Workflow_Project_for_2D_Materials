@@ -1,0 +1,6 @@
+Building DAG of jobs...
+Generating unit tests for each rule...
+Skipping rule all because it does not execute anything.
+Generating unit test for rule create_BULK_d12_from_cif: .tests/unit/test_create_BULK_d12_from_cif.py.
+Generating unit test for rule check_errored_output: .tests/unit/test_check_errored_output.py.
+Generating unit test for rule convert_output_to_cif: .tests/unit/test_convert_output_to_cif.py.
