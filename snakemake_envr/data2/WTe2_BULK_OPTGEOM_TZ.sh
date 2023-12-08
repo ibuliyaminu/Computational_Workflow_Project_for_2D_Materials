@@ -1,13 +1,13 @@
 #!/bin/bash
-#SBATCH -J WTe2_BULK_OPTGEOM_TZ
-#SBATCH -o WTe2_BULK_OPTGEOM_TZ-%J.o
+#SBATCH -J Te2W_BULK_OPTGEOM_TZ
+#SBATCH -o Te2W_BULK_OPTGEOM_TZ-%J.o
 #SBATCH --cpus-per-task=1
 #SBATCH --ntasks=32
-#SBATCH -A general
-#SBATCH -N 2
+#SBATCH -A mendoza_q
+#SBATCH -N 1
 #SBATCH -t 7-00:00:00
-#SBATCH --mem-per-cpu=3G
-export JOB=WTe2_BULK_OPTGEOM_TZ
+#SBATCH --mem-per-cpu=5G
+export JOB=Te2W_BULK_OPTGEOM_TZ
 export DIR=$SLURM_SUBMIT_DIR
 export scratch=$SCRATCH/crys17
 

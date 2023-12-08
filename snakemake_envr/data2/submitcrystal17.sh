@@ -30,4 +30,3 @@ srun Pcrystal 2>&1 >& $DIR/${JOB}.out
 cp fort.9 ${DIR}/${JOB}.f9' >> $1.sh
 
 sbatch $1.sh
-
