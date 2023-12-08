@@ -1,0 +1,65 @@
+Unknown Errored:
+
+Empty DataFrame
+Columns: [data_files]
+Index: []
+
+K Shrink Error:
+
+Empty DataFrame
+Columns: [data_files]
+Index: []
+
+Basis Sets are Linearly Dep
+
+Empty DataFrame
+Columns: [data_files]
+Index: []
+
+Not enough SCF cycles:
+
+Empty DataFrame
+Columns: [data_files]
+Index: []
+
+Memory Error:
+
+Empty DataFrame
+Columns: [data_files]
+Index: []
+
+Quota Error:
+
+Empty DataFrame
+Columns: [data_files]
+Index: []
+
+Out of Time Error:
+
+Empty DataFrame
+Columns: [data_files]
+Index: []
+
+Geometry Error, Distance Too Small:
+
+Empty DataFrame
+Columns: [data_files]
+Index: []
+
+Potentially Errored:
+
+Empty DataFrame
+Columns: [data_files]
+Index: []
+
+Completed:
+
+Empty DataFrame
+Columns: [data_files]
+Index: []
+
+Currently Running:
+
+Empty DataFrame
+Columns: [data_files]
+Index: []

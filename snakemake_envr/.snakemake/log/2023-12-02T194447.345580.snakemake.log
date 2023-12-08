@@ -1,0 +1,24 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                         count
+------------------------  -------
+create_BULK_d12_from_cif        1
+total                           1
+
+Select jobs to execute...
+
+[Sat Dec  2 19:44:48 2023]
+rule create_BULK_d12_from_cif:
+    input: data/WTe2_1Tprime_FULLOPT.cif
+    output: result1/WTe2_1Tprime_FULLOPT_BULK_OPTGEOM_TZ.d12
+    jobid: 0
+    reason: Missing output files: result1/WTe2_1Tprime_FULLOPT_BULK_OPTGEOM_TZ.d12
+    resources: tmpdir=/tmp
+
+[Sat Dec  2 19:44:51 2023]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2023-12-02T194447.345580.snakemake.log
