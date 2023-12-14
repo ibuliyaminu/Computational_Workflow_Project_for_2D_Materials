@@ -1,18 +1,19 @@
-# The CIF file can be downloaded from any material database such as RCSR, C2DB, or materials project.
-# RCSR = Reticular Chemistry Structure Resource (https://rcsr.anu.edu.au/)
-# C2DB = Computational 2D Materials Database (https://cmr.fysik.dtu.dk/c2db/c2db.html)
+#Different methods to get base materials for Density Functional Calculations.
+# 1- RCSR = Reticular Chemistry Structure Resource (https://rcsr.anu.edu.au/)
+# 2- C2DB = Computational 2D Materials Database (https://cmr.fysik.dtu.dk/c2db/c2db.html)
+# 3- From the Lab external drive
 
-###########I am using RCSR database in this project##############
+###########I am using the materials from the Lab external drive in this project##############
 
-# Step 1: Download CIF Material.
-def download_CIF_material(RCSR_url, filename): #function to download the CIF file from the specified RCSR_url
+# Step 1: Getting CIF Material.
+def retrieve_matereial(material_name, lab_external_drive path, local_storage_path): #function to get CIF file from the specified path
 #and save it to the specified filename
-    CIF_material = download(RCSR_url) #I will set up a download function here later
+    CIF_material = retrieve_matereial_path(material_name, lab_external_drive path, local_storage_path) #Implementation of the path for the materials
     return CIF_material
 
 # Step 2: Convert CIF to d12 Input format
-def convert_CIF_to_d12(CIF_material): #function to convert CIF material to d12 format
-    inputfile_d12 = convert_to_d12_format(CIF_material)  # I will later set a convert_to_d12_format function
+def CIF2D12(CIF_material, structure, path, opt, bassiset, OUTPUT_DIR): #function to convert CIF material to d12 format
+    inputfile_d12 = CIF2D12_format(material, structure, path, opt, bassiset, OUTPUT_DIR)   # set a convert_to_d12_format function
     return inputfile_d12
 
 # Step 3: Perform Density Functional Theory (DFT) Calculations (optimization) using CRYSTAL17 software on HPCC
@@ -38,8 +39,8 @@ def is_errored(output):
     return errored_outputs, optimized_outputs
 
 # Step 5: Convert Optimized Outputs to CIF (only for structural vizualization)
-def CRYSTAL_to_CIF_conversion(optimized_outputs): # Conversion function of optimized results to CIF format
-    CIF_optimized = CRYSTAL_to_CIF(optimized_outputs)  # Implementation of the CIF conversion
+def write_cif(optimized_outputs): # Conversion function of optimized results to CIF format
+    CIF_optimized = write_cif_format(optimized_outputs)  # Implementation of the CIF conversion
     return CIF_optimized
 
 # Step 6: Visualization using Relevant Software (e.g., Vesta)
