@@ -17,12 +17,12 @@ project documentation as described by Daniele Procida
 in the [Diátaxis documentation framework](https://diataxis.fr/)
 and consists of four separate parts:
 
-1. [Tutorials](tutorials.md)
-2. [Howto](how-to-guides.md)
-3. [Reference](reference.md)
-4. [Topic guides](explanation.md)
+1. [Dataflow Diafram](DataFlowDiagram.md)
+2. [Pseudocode](Pseudocode.md)
+3. [Tests](Tests.md)
+4. [Workflow](Workflow.md)
 
-## How to Cite
+## References
 
 To be added
 
