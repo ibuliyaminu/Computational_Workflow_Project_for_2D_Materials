@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/Workflow/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Workflow - 2D Materials Project</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Workflow";
+        var mkdocs_page_input_path = "Workflow.md";
+        var mkdocs_page_url = "/Workflow/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> 2D Materials Project
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../DataFlowDiagram/">Dataflow Diagram</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Pseudocode/">Pseudocode</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Tests/">Tests</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Workflow</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">2D Materials Project</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Workflow</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>The workflow can generally be defined as the sequence of steps involved in moving from the begining to the end of the working process. The snakefile for this project can be found in the <a href="https://github.com/ibuliyaminu/Computational_Workflow_Project_for_2D_Materials/blob/Workflow/snakemake_envr/Snakefile">workflow branch</a>.</p>
+<h2 id="step-1-rule-all">Step 1: rule all</h2>
+<p>I have used a special rule <strong>"rule all"</strong> that tells the snakemake to excute all the rule in the snakefile.</p>
+<h2 id="step-2-rule-create_bulk_d12_from_cif">Step 2: rule create_BULK_d12_from_cif</h2>
+<p>This rule takes input file <strong>WTe2.cif</strong> from data1 and excute the rule using the <a href="https://github.com/ibuliyaminu/Computational_Workflow_Project_for_2D_Materials/blob/Workflow/snakemake_envr/scripts/create_BULK_d12_from_cif.py">python script</a>. The output file <strong>WTe2_BULK_OPTGEOM_TZ.d12</strong> is deployed to result1 as expected.</p>
+<h2 id="step-3-rule-run_crystal17">Step 3: rule run_crystal17</h2>
+<p>This is the density functional calculation section where the output file from above rule is used for the calculation. The calculation was submitted using <a href="https://github.com/ibuliyaminu/Computational_Workflow_Project_for_2D_Materials/blob/Workflow/snakemake_envr/scripts/submitcrystal17.sh">submitcrystal17.sh</a> and <a href="https://github.com/ibuliyaminu/Computational_Workflow_Project_for_2D_Materials/blob/Workflow/snakemake_envr/scripts/submitcrystal17.py">submitcrystal17.py</a>. This section was completed outside the snakefile and the result was copied to the workflow for continuation. This is due to the fact that the waiting time (about 5 days) required for the DFT calculation is too much for the snakemake. In the future, I will have to read more on how solve this kind of problem.</p>
+<h2 id="step-4-rule-check_errored_output">Step 4: rule check_errored_output</h2>
+<p>This rule actually checks for errors in the calculation. It deploys the errored and un-errored results in the result2 folder. In the context of this project, there was no error in the calculation.Here is the <a href="https://github.com/ibuliyaminu/Computational_Workflow_Project_for_2D_Materials/blob/Workflow/snakemake_envr/scripts/updatelists.py">python script</a> for checking the error.</p>
+<h2 id="step-5-rule-convert_output_to_cif">Step 5: rule convert_output_to_cif</h2>
+<p>This rule converts the output file to cif file for visualization. The output file is deploy to the data3 folder. Here is the <a href="https://github.com/ibuliyaminu/Computational_Workflow_Project_for_2D_Materials/blob/Workflow/snakemake_envr/scripts/CRYSTAL2cif.py">python script</a> that was used for the excusion.</p>
+<h2 id="step-6-visualization">Step 6: Visualization</h2>
+<p>This section requires an external software. So, in the context of this project, I have done this outside the snakemake and copy the result here.</p>
+<h2 id="step-7-workflow-results">Step 7: Workflow Results</h2>
+<p><img alt="alt text" src="../img/Screenshot_Workflow.PNG" />
+<img alt="alt text" src="../img/WTe2_OPT.png" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Tests/" class="btn btn-neutral float-left" title="Tests"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Tests/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

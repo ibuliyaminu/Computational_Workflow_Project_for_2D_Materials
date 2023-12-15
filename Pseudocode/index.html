@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/Pseudocode/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Pseudocode - 2D Materials Project</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Pseudocode";
+        var mkdocs_page_input_path = "Pseudocode.md";
+        var mkdocs_page_url = "/Pseudocode/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> 2D Materials Project
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../DataFlowDiagram/">Dataflow Diagram</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Pseudocode</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Tests/">Tests</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Workflow/">Workflow</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">2D Materials Project</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Pseudocode</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="i-am-using-the-materials-from-the-lab-external-drive-in-this-project">I am using the materials from the Lab external drive in this project</h2>
+<h1 id="step-1-getting-cif-material">Step 1: Getting CIF Material</h1>
+<p>Firstly, I am getting the base materials from the Lab drive</p>
+<p>def retrieve_matereial(material_name, lab_external_drive path, local_storage_path):</p>
+<pre><code>CIF_material = retrieve_matereial_path(material_name, lab_external_drive path, local_storage_path) #Implementation of the path for the materials
+return CIF_material
+</code></pre>
+<h1 id="step-2-convert-cif-to-d12-input-format">Step 2: Convert CIF to d12 Input format</h1>
+<p>In order to run the density functional theory calculation, a d12 file is required, so I am trying to convert the cif file to d12 file.</p>
+<p>def CIF2D12(CIF_material, structure, path, opt, bassiset, OUTPUT_DIR):</p>
+<pre><code>inputfile_d12 = CIF2D12_format(material, structure, path, opt, bassiset, OUTPUT_DIR)   # set a convert_to_d12_format function
+return inputfile_d12
+</code></pre>
+<h1 id="step-3-perform-density-functional-theory-dft-calculations-optimization-using-crystal17-software-on-hpcc">Step 3: Perform Density Functional Theory (DFT) Calculations (optimization) using CRYSTAL17 software on HPCC</h1>
+<p>Here I am submitting the calculation on HPCC for DFT calculation
+def submitcrystal17_calculations(inputfile_d12):</p>
+<pre><code>DFT_outputs = submitcrystal17_on_HPCC(inputfile_d12)  #implementing the DFT calculation function
+return DFT_outputs
+</code></pre>
+<h1 id="step-4-separate-errored-ones-from-optimized-ones">Step 4: Separate Errored ones from Optimized ones</h1>
+<p>Checking for errors in the calculation</p>
+<p>def updatelist_errored_and_optimized(DFT_outputs):</p>
+<pre><code># Initialize lists to store errored and optimized outputs/results
+errored_outputs = []
+optimized_outputs = []
+</code></pre>
+<h1 id="define-a-function-to-check-if-a-result-is-errored-or-uptimized">Define a function to check if a result is errored or uptimized</h1>
+<p>def is_errored(output):</p>
+<pre><code># Loop through DFT outputs and separate them based on a condition
+for output in DFT_outputs:
+    if is_errored(output):
+        errored_outputs.append(output)
+    else:
+        optimized_outputs.append(output)
+
+return errored_outputs, optimized_outputs
+</code></pre>
+<h1 id="step-5-convert-optimized-outputs-to-cif-only-for-structural-vizualization">Step 5: Convert Optimized Outputs to CIF (only for structural vizualization)</h1>
+<p>def write_cif(optimized_outputs): # Conversion function of optimized results to CIF format</p>
+<pre><code>CIF_optimized = write_cif_format(optimized_outputs)  # Implementation of the CIF conversion
+return CIF_optimized
+</code></pre>
+<h1 id="step-6-visualization-using-relevant-software-eg-vesta">Step 6: Visualization using Relevant Software (e.g., Vesta)</h1>
+<p>def visualize_optimized_structure(CIF_optimized):</p>
+<pre><code># Implementation for visualizing the optimized structure using software like Vesta
+visualize_structure(CIF_optimized)  # Implementing the visualization function
+</code></pre>
+<h1 id="step-7-save-optimized-structures-end">Step 7: Save Optimized Structures (END)</h1>
+<p>def save_optimized_structures(CIF_optimized):</p>
+<pre><code># Implementation to save the optimized structures to a storage location
+save_structures(optimized_structure)  # Implementing the saving function
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../DataFlowDiagram/" class="btn btn-neutral float-left" title="Dataflow Diagram"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Tests/" class="btn btn-neutral float-right" title="Tests">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../DataFlowDiagram/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Tests/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
