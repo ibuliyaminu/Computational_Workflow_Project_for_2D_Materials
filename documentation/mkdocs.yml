@@ -1,12 +1,12 @@
 site_name: 2D Materials Project
 site_url: https://example.com/
-theme: 
- name: "material"
+theme: readthedocs
+ 
 plugins:
  - mkdocstrings
 nav:
   - Home: index.md
-  - Tutorials: tutorials.md
-  - Howto: howto.md
-  - Reference: reference.md
-  - Topic guides: topic_guides.md
+  - Dataflow Diagram: DataFlowDiagram.md
+  - Pseudocode: Pseudocode.md
+  - Tests: Tests.md
+  - Workflow: Workflow.md

@@ -1,0 +1,4 @@
+.mkdocs
+*.log
+build
+site

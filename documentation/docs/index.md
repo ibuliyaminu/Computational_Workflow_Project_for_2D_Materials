@@ -17,14 +17,14 @@ project documentation as described by Daniele Procida
 in the [Diátaxis documentation framework](https://diataxis.fr/)
 and consists of four separate parts:
 
-1. [Dataflow Diafram](DataFlowDiagram.md)
+1. [Dataflow Diagram](DataFlowDiagram.md)
 2. [Pseudocode](Pseudocode.md)
 3. [Tests](Tests.md)
 4. [Workflow](Workflow.md)
 
 ## References
 
-To be added
+1. [DFT Tutorial](https://www.physics.udel.edu/~bnikolic/QTTG/NOTES/DFT/PRIMER_IN_DFT_SPRINGER_2003/NOGUEIRA=tutorial_on_density_functional_theory.pdf)
 
 ## Acknowledgements
 
