@@ -28,4 +28,4 @@ and consists of four separate parts:
 
 ## Acknowledgements
 
-Thank you so much, Andrew Fullard for the helpfull knowledge.
+Thank you so much, Andrew Fullard, for the helpfull knowledge.
